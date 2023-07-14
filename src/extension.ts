@@ -92,13 +92,13 @@ class testFilesOnSave {
 	}
 
 	private _enable() {
-		console.log("Enabling Test On Save");
+		console.log("Enabling Test Files On Save");
 		this._isEnabled = true;
 		this._statusUpdate('Autotest Enabled');
 	}
 
 	private _disable() {
-		console.log("Disabling Test On Save");
+		console.log("Disabling Test Files On Save");
 		this._isEnabled = false;
 		this._statusUpdate('Autotest Disabled');
 	}

@@ -2,9 +2,10 @@
   "publisher": "hack2root",
   "name": "testfilesonsave",
   "license": "MIT",
+  "icon": "images/logo.png",
   "displayName": "Test Files On Save",
   "description": "Extension for calling test scripts on a file save",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.80.0"
   },
