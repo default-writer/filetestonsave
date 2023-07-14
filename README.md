@@ -8,6 +8,7 @@ Test Files On Save extension runs shell scripts on any document type on save (TD
 * supports environment variables `${env:APPDATA}`
 * supports status bar icon visualization
 * supports exit codes customization
+* supports all type of [language identifiers](https://code.visualstudio.com/docs/languages/identifiers) and custom `any` type.
 * uses background thread execution
 
 ```json
