@@ -15,8 +15,7 @@ Test Files On Save extension runs shell scripts on any document type on save (TD
     "testFilesOnSave.languageId": "c",
     "testFilesOnSave.testCommands": [
         {
-            "c": "echo ${env:APPDATA}",
-            "cpp": "echo  --build ${workspaceFolder} --target ${fileBasenameNoExtension}"
+          "cpp": "echo  --build ${workspaceFolder} --target ${fileBasenameNoExtension}"
         }
     ]
 ```
