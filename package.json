@@ -1,5 +1,5 @@
 {
-  "publisher": "default-writer",
+  "publisher": "hack2root",
   "name": "testfilesonsave",
   "license": "MIT",
   "displayName": "Test Files On Save",
@@ -7,6 +7,9 @@
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.80.0"
+  },
+  "repository": {
+    "url": "https://github.com/default-writer/filetestonsave"
   },
   "categories": [
     "Other"
