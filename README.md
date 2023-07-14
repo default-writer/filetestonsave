@@ -1,71 +1,60 @@
-# filetestonsave README
+# Test Files On Save
 
-This is the README for your extension "filetestonsave". After writing up a brief description, we recommend including the following sections.
+Tired of switching to the test explorer to run test while working TDD style?
+This extension will automatically run them for you when you save a file!
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* Language independent - command to run tests can be set through ``settings.json``
+* Can be enabled/disabled through ``settings.json`` or by clicking the status bar icon
+* Runs discretely in the background - no annoying popups, only red or green status bar icon displaying last test result
+* Exit codes can be mapped to status icons for passing, failed, and errored tests
+* Allows using VSCode predefined variables
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Demo
+<img src="images/demo.gif" width="600" alt="Demo" />
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Test On Save runs on VScode 1.62.0 and above.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `testOnSave.enabled`: Enable/disable this extension
+* `testOnSave.testCommands`: Commands to run tests for each language Id. Any non-zero exit code is treated as failing tests.
+* `testOnSave.languageId`: Only trigger tests when a file of this language is saved. Set to "any" to always run tests after saving.
+* `testOnSave.exitCodePass`: Exit code(s) that are considered as a passing test suite. Defaults to 0.
+* `testOnSave.exitCodeFail`: Exit code(s) that are considered as a failing test suite. Defaults to non-zero.
+* `testOnSave.exitCodeError`: Exit code(s) that are considered as errors when running the tests. Not used by default.
+
+## Predefined Variables in test commands:
+
+The following predefined variables are supported:
+- ${workspaceFolder} - the path of the folder opened in VS Code
+- ${workspaceFolderBasename} - the name of the folder opened in VS Code without any slashes (/)
+- ${file} - the current opened file
+- ${fileWorkspaceFolder} - the current opened file's workspace folder
+- ${relativeFile} - the current opened file relative to workspaceFolder
+- ${relativeFileDirname} - the current opened file's dirname relative to workspaceFolder
+- ${fileBasename} - the current opened file's basename
+- ${fileBasenameNoExtension} - the current opened file's basename with no file extension
+- ${fileExtname} - the current opened file's extension
+- ${fileDirname} - the current opened file's folder path
+- ${fileDirnameBasename} - the current opened file's folder name
+- ${env:NAME} - reference environment variables through the ${env:Name} syntax
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+No issues so far
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+# Test Files On Save derived from the extension [andifin.testonsave](https://marketplace.visualstudio.com/items/andifin.testonsave)
 
-### 1.0.0
+See the [changelog](https://marketplace.visualstudio.com/items/andifin.testonsave/changelog) for details.
 
-Initial release of ...
+## Attributions
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Icons made by <a href="https://www.flaticon.com/authors/maxim-basinski-premium" title="Maxim Basinski Premium">Maxim Basinski Premium</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>

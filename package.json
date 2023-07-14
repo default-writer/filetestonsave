@@ -1,21 +1,69 @@
 {
-  "name": "filetestonsave",
-  "displayName": "filetestonsave",
+  "publisher": "default-writer",
+  "name": "testfilesonsave",
+  "license": "MIT",
+  "displayName": "Test Files On Save",
   "description": "Extension for calling test scripts on a file save",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "keywords": [
+    "test",
+    "testing",
+    "automation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
+    "configuration": [
       {
-        "command": "filetestonsave.helloWorld",
-        "title": "Hello World"
+        "title": "Test Files On Save",
+        "properties": {
+          "testFilesOnSave.enabled": {
+            "type": "boolean",
+            "description": "Run tests automatically when saving a file",
+            "default": false
+          },
+          "testFilesOnSave.testCommands": {
+            "type": "array",
+            "description": "Commands to execute tests",
+            "default": null,
+            "properties": {
+              "languageId": {
+                "type": "string"
+              },
+              "testCommand": {
+                "type": "string"
+              }
+            }
+          },
+          "testFilesOnSave.languageId": {
+            "type": "string",
+            "description": "Only files with this language id trigger the test command. Use 'any' to trigger independent of the language.",
+            "default": "any"
+          },
+          "testFilesOnSave.exitCodePass": {
+            "type": "string",
+            "description": "Exit code(s) that are considered as a passing test suite. Defaults to 0. Separate multiple exit codes by comma. You can also use ranges. Example: '0,1,2-4'",
+            "default": "0"
+          },
+          "testFilesOnSave.exitCodeFail": {
+            "type": "string",
+            "description": "Exit code(s) that are considered as a failing test suite. Defaults to 0-999. Separate multiple exit codes by comma. You can also use ranges. Example: '0,1,2-4'",
+            "default": "0-999"
+          },
+          "testFilesOnSave.exitCodeError": {
+            "type": "string",
+            "description": "Exit code(s) that are considered as errors when running the tests. Not used by default. Separate multiple exit codes by comma. You can also use ranges. Example: '0,1,2-4'",
+            "default": null
+          }
+        }
       }
     ]
   },
