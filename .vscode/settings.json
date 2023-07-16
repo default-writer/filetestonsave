@@ -4,7 +4,8 @@
     "testFilesOnSave.languageId": "c",
     "testFilesOnSave.testCommands": [
         {
-            "c": "echo ${fileBasenameNoExtension}"
+            "c": "echo ${relativeFile}"
         }
-    ]
+    ],
+    "cmake.configureOnOpen": false
 }

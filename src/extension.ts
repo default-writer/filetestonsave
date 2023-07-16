@@ -4,14 +4,14 @@ import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
 
-	const extension = new testFilesOnSave(context);
+	const extension = new TestFilesOnSave(context);
 
 	vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
 		extension.runTests(document);
 	});
 }
 
-class testFilesOnSave {
+class TestFilesOnSave {
 	private _testCommands: Array<any> = [];
 	private _isEnabled: any = false;
 	private _languageId: any = "any";
@@ -158,6 +158,9 @@ class testFilesOnSave {
 				if (commandText.includes('${file}')) {
 					commandText = commandText.replace('${file}', document.uri.fsPath);
 				}
+				if (commandText.includes('${relativeFile}')) {
+					commandText = commandText.replace('${relativeFile}', path.relative(fileWorkspaceFolder?.uri.fsPath ?? '', document.uri.fsPath));
+				}				
 				if (commandText.includes('${fileWorkspaceFolder}')) {
 					commandText = commandText.replace('${fileWorkspaceFolder}', fileWorkspaceFolder?.uri.fsPath ?? '');
 				}
