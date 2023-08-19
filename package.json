@@ -2,10 +2,10 @@
   "publisher": "hack2root",
   "name": "testfilesonsave",
   "license": "MIT",
-  "icon": "images/logo.png",
-  "displayName": "Test Files On Save",
+  "icon": "images/checklist.png",
+  "displayName": "test-files-on-save",
   "description": "Extension for calling test scripts on a file save",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -27,7 +27,7 @@
   "contributes": {
     "configuration": [
       {
-        "title": "Test Files On Save",
+        "title": "test-files-on-save",
         "properties": {
           "testFilesOnSave.enabled": {
             "type": "boolean",

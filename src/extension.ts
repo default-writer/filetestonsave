@@ -33,7 +33,7 @@ class TestFilesOnSave {
 		this._statusBarIcon.command = enableDisableCommandId;
 		context.subscriptions.push(this._statusBarIcon);
 		context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(e => this._readConfiguration()));
-		this._outputChannel = vscode.window.createOutputChannel('Test Files On Save');
+		this._outputChannel = vscode.window.createOutputChannel('test-files-on-save');
 		this._readConfiguration();
 	}
 
@@ -92,13 +92,13 @@ class TestFilesOnSave {
 	}
 
 	private _enable() {
-		console.log("Enabling Test Files On Save");
+		console.log("Enabling test-files-on-save");
 		this._isEnabled = true;
 		this._statusUpdate('Autotest Enabled');
 	}
 
 	private _disable() {
-		console.log("Disabling Test Files On Save");
+		console.log("Disabling test-files-on-save");
 		this._isEnabled = false;
 		this._statusUpdate('Autotest Disabled');
 	}
@@ -145,8 +145,13 @@ class TestFilesOnSave {
 		const workspaceFolderUri = vscode.workspace.getWorkspaceFolder(document.uri);
 		const filePath = document.fileName;
 		const fileWorkspaceFolder = vscode.workspace.getWorkspaceFolder(vscode.Uri.file(filePath));
-		const cmd = this._testCommands.find(obj => obj.hasOwnProperty(document.languageId)); // Get the files and command values
-		let commandText = cmd[document.languageId];
+		let fileType = document.languageId;
+		const fileExtension = filePath.split('.').pop();
+		if (fileExtension !== document.languageId) {
+			fileType = fileExtension ?? '';
+		}
+		const cmd = this._testCommands.find(obj => obj.hasOwnProperty(fileType)); // Get the files and command values
+		let commandText = cmd[fileType];
 		try {
 			if (fileWorkspaceFolder) {
 				if (commandText.includes('${workspaceFolder}')) {

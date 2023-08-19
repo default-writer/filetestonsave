@@ -1,6 +1,6 @@
-# Test Files On Save (TDD)
+# file-tests-runner (TDD)
 
-Test Files On Save extension runs shell scripts on any document type on save (TDD)
+file-tests-runner extension runs shell scripts on any document type on save (TDD)
 
 ## Features: 
 
@@ -12,21 +12,21 @@ Test Files On Save extension runs shell scripts on any document type on save (TD
 * uses background thread execution
 
 ```json
-    "testFilesOnSave.enabled": true,
-    "testFilesOnSave.languageId": "c",
+    ".enabled": true,testFilesOnSave
+    "testFilesOnSave.languageId": "any",
     "testFilesOnSave.testCommands": [
         {
-          "cpp": "echo  --build ${workspaceFolder} --target ${fileBasenameNoExtension}"
+          "c": "echo .c file saved"
+        },
+        {
+          "h": "echo .h file saved"
         }
     ]
 ```
 
-## Demo
-<img src="images/demo.gif" width="600" alt="Demo" />
-
 ## Requirements
 
-Test Files On Save runs on VScode 1.80.0 and above.
+file-tests-runner runs on VScode 1.80.0 and above.
 
 ## Predefined Variables in test commands:
 
@@ -56,7 +56,7 @@ This extension contributes the following settings:
 * `testFilesOnSave.exitCodeError`: Exit code(s) that are considered as errors when running the tests. Not used by default.
 
 ```json
-        "title": "Test Files On Save",
+        "title": "file-tests-runner",
         "properties": {
           "testFilesOnSave.enabled": {
             "type": "boolean",
@@ -110,4 +110,4 @@ No release notes
 ## Attributions
 
 * Icons taken from [icon8.com](https://icons8.com/icons/set/test)
-* Test Files On Save derived from the extension [andifin.testonsave](https://marketplace.visualstudio.com/items/andifin.testonsave)
+* file-tests-runner derived from the extension [andifin.testonsave](https://marketplace.visualstudio.com/items/andifin.testonsave)
