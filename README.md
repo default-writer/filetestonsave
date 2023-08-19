@@ -1,8 +1,10 @@
-# file-tests-runner (TDD)
+# test-files-on-save (TDD)
 
-file-tests-runner extension runs shell scripts on any document type on save (TDD)
+test-files-on-save extension runs shell scripts on any document type on save (TDD)
 
-## Features: 
+![image](./images/ss.png)
+
+## Features
 
 * supports subset of predefined variables `${workspaceFolder}` [variables-reference](https://code.visualstudio.com/docs/editor/variables-reference)
 * supports environment variables `${env:APPDATA}`
@@ -26,23 +28,24 @@ file-tests-runner extension runs shell scripts on any document type on save (TDD
 
 ## Requirements
 
-file-tests-runner runs on VScode 1.80.0 and above.
+test-files-on-save runs on VScode 1.80.0 and above.
 
-## Predefined Variables in test commands:
+## Predefined Variables in test commands
 
 The following predefined variables are supported:
-- ${workspaceFolder} - the path of the folder opened in VS Code
-- ${workspaceFolderBasename} - the name of the folder opened in VS Code without any slashes (/)
-- ${file} - the current opened file
-- ${fileWorkspaceFolder} - the current opened file's workspace folder
-- ${relativeFile} - the current opened file relative to workspaceFolder
-- ${relativeFileDirname} - the current opened file's dirname relative to workspaceFolder
-- ${fileBasename} - the current opened file's basename
-- ${fileBasenameNoExtension} - the current opened file's basename with no file extension
-- ${fileExtname} - the current opened file's extension
-- ${fileDirname} - the current opened file's folder path
-- ${fileDirnameBasename} - the current opened file's folder name
-- ${env:NAME} - reference environment variables through the ${env:Name} syntax
+
+* ${workspaceFolder} - the path of the folder opened in VS Code
+* ${workspaceFolderBasename} - the name of the folder opened in VS Code without any slashes (/)
+* ${file} - the current opened file
+* ${fileWorkspaceFolder} - the current opened file's workspace folder
+* ${relativeFile} - the current opened file relative to workspaceFolder
+* ${relativeFileDirname} - the current opened file's dirname relative to workspaceFolder
+* ${fileBasename} - the current opened file's basename
+* ${fileBasenameNoExtension} - the current opened file's basename with no file extension
+* ${fileExtname} - the current opened file's extension
+* ${fileDirname} - the current opened file's folder path
+* ${fileDirnameBasename} - the current opened file's folder name
+* ${env:NAME} - reference environment variables through the ${env:Name} syntax
 
 ## Extension Settings
 
@@ -56,7 +59,7 @@ This extension contributes the following settings:
 * `testFilesOnSave.exitCodeError`: Exit code(s) that are considered as errors when running the tests. Not used by default.
 
 ```json
-        "title": "file-tests-runner",
+        "title": "test-files-on-save",
         "properties": {
           "testFilesOnSave.enabled": {
             "type": "boolean",
@@ -110,4 +113,4 @@ No release notes
 ## Attributions
 
 * Icons taken from [icon8.com](https://icons8.com/icons/set/test)
-* file-tests-runner derived from the extension [andifin.testonsave](https://marketplace.visualstudio.com/items/andifin.testonsave)
+* test-files-on-save derived from the extension [andifin.testonsave](https://marketplace.visualstudio.com/items/andifin.testonsave)

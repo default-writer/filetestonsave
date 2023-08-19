@@ -5,7 +5,7 @@
   "icon": "images/checklist.png",
   "displayName": "test-files-on-save",
   "description": "Extension for calling test scripts on a file save",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "engines": {
     "vscode": "^1.80.0"
   },
